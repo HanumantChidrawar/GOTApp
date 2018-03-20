@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" type='text/css' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type='text/css' href="css/style.css">
+
+    <title>Game of Thrones</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  </head>
+
+  <body ng-app='gameOfThrones' class="bg">
+
+  <header>
+    <!-- Toggle Menu Navbar filters start -->
+    <nav class="navbar navbar-fixed-top topnav"  role="navigation" style="background-color: #323232">
+       <div class="container topnav">
+          <div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+             </button>
+             <a class="navbar-brand topnav" href="#/" ><img src="images/logo.png" style="width: 150px;max-width: 100%; height: 50px; margin-bottom: 0px;"></a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-collapse-1">
+              <ul class="navbar-nav nav navbar-right">
+                  <li>
+                      <a ng-href="#/"  class=" nav-link">Home</a>
+                  </li>
+                  <li>
+                      <a ng-href="#/all" class=" nav-link "> <img src="images/all.png" style="width: 20px;max-width: 100%; height: 20px; margin-bottom: 0px; padding-right:1px"/>All</a>
+                  </li>
+                  <li>
+                      <a ng-href="#/books" class=" nav-link"> <img src="images/books.png" style="width: 20px;max-width: 100%; height: 20px; margin-bottom: 0px; padding-right:1px"/>Books</a>
+                  <li>
+                      <a ng-href="#/characters" class=" nav-link"> <img src="images/people.png" style="width: 20px;max-width: 100%; height:20px; margin-bottom: 0px; padding-right:1px"/>Characters</a></li>
+                  <li>
+                      <a ng-href="#/houses" class=" nav-link"> <img src="images/houses.png" style="width: 20px;max-width: 100%; height: 20px; margin-bottom: 0px; padding-right:1px"/>Houses</a>
+                  </li>
+              </ul>
+          </div>
+       </div>
+    </nav>          <!-- Toggle Menu Navbar filters Ends -->
+
+  </header>
+
+  <section class="container-fluid">
+  <div class="parallax-window" data-parallax="scroll" data-image-src="css/background.png" ng-view></div>
+  </section>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/home/hanupati/Downloads/parallax.js"></script>
+    <script type="text/javascript" src="Angular/modules/app.js"></script>
+    <script type="text/javascript" src="Angular/services/getService.js"></script>
+    <script type="text/javascript" src="Angular/controllers/housesController.js"></script>
+    <script type="text/javascript" src="Angular/controllers/houseController.js"></script>
+    <script type="text/javascript" src="Angular/controllers/booksController.js"></script>
+    <script type="text/javascript" src="Angular/controllers/bookController.js"></script>
+    <script type="text/javascript" src="Angular/controllers/charactersController.js"></script>
+    <script type="text/javascript" src="Angular/controllers/characterController.js"></script>
+    <script type="text/javascript" src="Angular/controllers/allController.js"></script>
+    <script type="text/javascript" src="Angular/directives/booksDirective.js"></script>
+    <script type="text/javascript" src="Angular/directives/charactersDirective.js"></script>
+    <script type="text/javascript" src="Angular/directives/housesDirective.js"></script>
+    <script type="text/javascript" src="Angular/modules/routes.js"></script>
+
+  </body>
+
+</hmtl>

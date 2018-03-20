@@ -1,0 +1,63 @@
+<!--This is single house view.-->
+
+<section class="container" style="margin: 5%">
+
+  <div class="row" >
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;color:black">
+      <h2>{{house.houseData.name || house.none}}</h2>
+    </div>
+
+    <div class="card col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="card-body">
+        <h3 class="card-title">Region:</h3> <p class="text-color">{{house.houseData.region || house.none}}</p>
+        <h3 class="card-subtitle mb-2">Coat Of Arms:</h3> <p class="text-color">{{house.houseData.coatOfArms || house.none}}</p>
+        <h3>Words:</h3> <p class="text-color">{{house.houseData.words || house.none}}</p>
+        <h3 ng-if="house.houseData.Titles.length">Titles:</h3><p class="text-color"><span class="card-text" ng-repeat="title in house.houseData.Titles"> {{title || house.none}}</span></p>
+        <h3>Seats:</h3><p class="text-color"><span class="card-text" ng-repeat="seat in house.houseData.seats"> {{seat || house.none}}</span></p>
+      </div>
+    </div>
+
+    <div class="card col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="card-body">
+        <h3 class="card-title">Current Lord</h3>
+        <p>
+        <a class="text-color" ng-href='#/character/{{house.currentLord}}'>
+        Character {{house.currentLord}}
+        </a></p>
+        <h3 class="card-subtitle mb-2 ">Over Lord</h3>
+        <p><a class="text-color" ng-href='#/house/{{house.overLord}}'>
+        Character {{house.overLord}}
+        </a></p>
+         <h3>Heir:</h3> <p><a class="text-color" ng-href='#/character/{{house.heir}}'>Character {{house.heir || house.none}}</a></p>
+         <h3>Founded:</h3> <p class="text-color">{{house.houseData.founded || house.none}}</p>
+        <h3>Founder:</h3> <p><a class="text-color" ng-href='#/character/{{house.founder}}'>Character {{house.founder || house.none}}</a></p>
+      </div>
+    </div>
+
+    <div class="card col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="card-body">
+        <h3 class="card-title" ng-if="house.swornMembers.length">Sworn Members: </h3>
+        <p><span ng-repeat="swornMember in house.swornMembers">
+        <a class="text-color" ng-href='#/character/{{swornMember}}'>
+        Character {{swornMember || house.none}}
+        </a>
+        </span>
+        </p>
+        <h3 class="card-subtitle mb-2 " ng-if="house.cadetBranches.length">Cadet Branch: </h3>
+        <p><span ng-repeat="cadetBranch in house.cadetBranches">
+        <a class="text-color" ng-href='#/house/{{cadetBranch}}'>
+        Character {{cadetBranch || house.none}}
+        </a>
+        </span></p>
+        <h3>Ancestral Weapons:</h3>
+        <p class="text-color"><span ng-repeat="weapon in house.houseData.ancestralWeapons">
+         {{weapon || house.none}}
+        </span></p>
+        <h3>Died Out:</h3> <p class="text-color">{{house.houseData.diedOut || house.none}}</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>

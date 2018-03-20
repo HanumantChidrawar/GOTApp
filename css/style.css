@@ -1,0 +1,64 @@
+body, html {
+    height: 100%;
+}
+.bg {
+    /* The image used */
+    background-image: url("background1.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: repeat;
+    background-size: contain , cover;
+}
+ a.nav-link{
+  text-decoration: none;
+  color: white;
+}
+a:hover{
+  color: black;
+}
+
+.grow:hover { transform: scale(1.5);}
+
+
+h3{
+  text-decoration: none;
+  color: white;
+}
+
+.types{
+  text-align: center;
+}
+
+.fa-university{
+color: black;
+}
+
+.fa-book{
+color: black
+}
+
+.fa-user{
+color: black
+}
+
+h1,h2,h3,h4,h5,h6{
+color: black;
+}
+
+p.link{
+  text-align: justify;
+}
+
+.text-color{
+  color: white;
+}
+
+.img-size{
+
+  height: 150px;
+  width: 150px;
+}

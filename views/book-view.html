@@ -1,0 +1,51 @@
+<section class="container" style="margin: 5%">
+
+   <div class="row" >
+
+    <div class="card col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+
+  <div style="text-align: center"><h2>{{book.bookData.name || book.none}}</h2></div></div>
+
+ <!-- <div class="row" >-->
+
+    <div class="card col-xs-12 col-sm-12 col-md-6 col-lg-6" >
+  <div class="card-body">
+    <h3 style="color: Black">Publisher:</h3> <p class="text-color">{{book.bookData.publisher || book.none}}</p>
+    <div ng-repeat="author in book.bookData.authors">
+    <h3 class="card-subtitle mb-2 "> Author:</h3> <p class="text-color">{{author || book.none}}</p>
+    </div>
+    <h3>Country:</h3> <p class="text-color">{{book.bookData.country || book.none}}</p>
+    <h3>Pages:</h3> <p class="text-color">{{book.bookData.numberOfPages || book.none}}</p>
+    <h3>ISBN:</h3> <p class="text-color">{{book.bookData.isbn || book.none}}</p>
+    <h3>Media Type:</h3> <p class="text-color">{{book.bookData.mediaType || book.none}}</p>
+    <h3>Released:</h3> <p class="text-color">{{((book.bookData.released) | date: 'medium' )|| book.none}}</p>
+  </div>
+</div>
+
+
+<div class="card col-xs-12 col-sm-12 col-md-6 col-lg-6" ng-if="book.characters.length || book.povCharacters.length">
+  <div class="card-body">
+    <h2 style="color: Black">Characters and POV Characters</h2>
+    <h3>Characters:</h3>
+    <p class="link"><span ng-repeat="character in book.characters">
+    <a class="text-color" ng-href="#/character/{{character}}">
+    Character {{character || book.none}}
+    </a>
+  </span></p>
+<br/>
+<br/>
+<br/>
+    <h3>POVs:</h3>
+    <p class="link">
+    <span ng-repeat="povCharacter in book.povCharacters">
+    <a class="text-color" ng-href="#/character/{{povCharacter}}">
+    Character {{povCharacter || book.none}}
+    </a>
+  </span></p>
+    </div>
+
+</div>
+
+  </div>
+
+</section>

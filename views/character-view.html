@@ -1,0 +1,74 @@
+<section class="container" style="margin: 5%">
+
+   <div class="row" >
+
+    <div class="card col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+
+  <div style="text-align: center"><h2>{{character.characterData.name || character.none}}</h2></div></div>
+
+ <!-- <div class="row" >-->
+
+    <div class="card col-xs-12 col-sm-12 col-md-6 col-lg-6" >
+    <div class="card-body">
+    <h3 class="card-title">Played by: {{character.characterData.playedBy[0] || character.none}}</h3>
+    <h3 class="card-subtitle mb-2"> Aliases:</h3>
+    <span ng-repeat="alias in character.characterData.aliases" class="text-color">
+     {{alias || character.none}}
+    </span>
+    <h3 class="card-subtitle mb-2"> Title:</h3>
+    <span ng-repeat="title in character.characterData.titles" class="text-color">
+     {{title || character.none}}
+    </span>
+    <h3>Culture: </h3><p class="text-color">{{character.characterData.culture || character.none}}</p>
+    <h3>Gender: </h3><p class="text-color">{{character.characterData.gender || character.none}}</p>
+    <h3>Born: </h3><p class="text-color">{{character.characterData.born || character.none}}</p>
+    <h3>Died: </h3><p class="text-color">{{character.characterData.died || character.none}}</p>
+  </div>
+</div>
+
+
+<div class="card col-xs-12 col-sm-12 col-md-6 col-lg-6">
+  <div class="card-body">
+    <h3 class="card-subtitle mb-2 ">Allegiances:</h3>
+    <span ng-repeat="allegiance in character.allegiances" >
+    <a class="text-color" ng-href='#/house/{{allegiance}}'>
+     House {{allegiance || character.none}}
+    </a>
+    </span>
+    <h3 class="card-subtitle mb-2">Books:</h3>
+    <span ng-repeat="book in character.books">
+    <a class="text-color" ng-href='#/book/{{book}}'>
+     Book {{book || character.none}}
+    </a>
+    </span>
+    <div>
+       <h3>Father: </h3><p><a class="text-color" ng-href="#/character/{{character.father}}">Character {{character.father || character.none}}</a></p>
+       <h3>Mother: </h3><p><a class="text-color" ng-href="#/character/{{character.mother}}">Character {{character.mother || character.none}}</a></p>
+       <h3>Spouse: </h3><p><a class="text-color" ng-href="#/character/{{character.spouse}}">Character {{character.spouse || character.none}}</a></p>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="card col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-if="character.characterData.tvSeries.length || character.povBooks.length">
+  <div class="card-body">
+    <h2 class="card-title">Seasons and POV Books</h2>
+    <h3 ng-if="character.characterData.tvSeries.length">Season: </h3>
+    <span class="text-color" ng-repeat="season in character.characterData.tvSeries">
+      {{season || character.none}}
+    </span>
+    <h3 class="card-subtitle mb-2" ng-if="character.povBooks.length"> POV Book: </h3>
+    <span ng-repeat="povBook in character.povBooks">
+    <a class="text-color" ng-href='#/book/{{povBook}}'>
+     {{povBook || character.none}}
+    </a>
+    </span>
+  </div>
+
+</div>
+
+
+  </div>
+
+</section>
